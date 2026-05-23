@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Visual & UI Design Portfolio 2026 — Terence Huang">
+  <meta name="author" content="Terence Huang">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Terence — Portfolio">
+  <meta property="og:description" content="Visual & UI Design Portfolio 2026">
+  <meta property="og:image" content="assets/images/COVER/UIdesign.jpg">
+  <meta property="og:locale" content="zh_TW">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terence — Portfolio">
+  <meta name="twitter:description" content="Visual & UI Design Portfolio 2026">
+  <meta name="twitter:image" content="assets/images/COVER/UIdesign.jpg">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMTExMTEwIi8+PHRleHQgeD0iMTYiIHk9IjIyIiBmb250LWZhbWlseT0iQmViYXMgTmV1ZSwgQXJpYWwgQmxhY2ssIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNGN0Y2RjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIwLjUiPlQ8L3RleHQ+PC9zdmc+">
+
+<title>Terence — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&family=Grand+Hotel&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --white:#FFFFFF;
+  --off:#F7F6F4;
+  --stone:#EDEBE7;
+  --ink:#111110;
+  --ink2:#444440;
+  --ink3:#888884;
+  --border:#DDDBD7;
+  --accent:#1A1A18;
+}
+html,body{height:100%;overflow:hidden;}
+body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--ink);display:flex;flex-direction:column;}
+header{flex-shrink:0;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:52px;position:relative;z-index:100;}
+.logo-mark{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.12em;color:var(--ink);}
+nav{display:flex;gap:0;align-items:center;}
+nav button{background:none;border:none;cursor:pointer;padding:0 1rem;font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.06em;color:var(--ink3);height:52px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+nav button:hover{color:var(--ink);}
+nav button.active{color:var(--ink);border-bottom:2px solid var(--ink);font-weight:500;}
+.page-counter{font-size:0.7rem;color:var(--ink3);letter-spacing:0.1em;display:flex;align-items:center;gap:0.5rem;min-width:80px;justify-content:flex-end;}
+.page-counter strong{color:var(--ink);}
+.slides-wrap{flex:1;overflow:hidden;position:relative;}
+.slides{display:flex;height:100%;transition:transform .55s cubic-bezier(.77,0,.18,1);}
+.slide{flex-shrink:0;width:100%;height:100%;overflow-y:auto;background:var(--off);display:flex;flex-direction:column;}
+.slide-body{flex:1;display:flex;position:relative;overflow:hidden;}
+.slide-label{flex-shrink:0;width:36px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--border);background:var(--white);}
+.slide-label span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink3);white-space:nowrap;font-weight:400;}
+.slide-content{flex:1;padding:3rem 3.5rem;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
+.slide-footer{height:36px;border-top:1px solid var(--border);background:var(--white);display:flex;align-items:center;justify-content:space-between;padding:0 1rem 0 3rem;flex-shrink:0;}
+.slide-footer-text{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink3);font-weight:400;}
+.slide-footer-logo{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.1em;color:var(--border);white-space:nowrap;font-weight:400;}
+.nav-arrows{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:1rem;padding:0.8rem;background:var(--white);border-top:1px solid var(--border);}
+.nav-arrows button{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;color:var(--ink);}
+.nav-arrows button:hover{background:var(--ink);border-color:var(--ink);color:var(--white);}
+.nav-arrows button svg{width:14px;height:14px;fill:currentColor;}
+.progress-dots{display:flex;gap:6px;align-items:center;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:background .2s,transform .2s;cursor:pointer;}
+.dot.active{background:var(--ink);transform:scale(1.3);}
+.display{font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;line-height:0.92;color:var(--ink);}
+.eyebrow{font-size:0.65rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink3);font-weight:400;margin-bottom:0.6rem;}
+.body-text{font-size:0.82rem;line-height:1.85;color:var(--ink2);font-weight:300;}
+.caption{font-size:0.68rem;color:var(--ink3);letter-spacing:0.06em;}
+.photo-box{background:var(--stone);border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:0.68rem;letter-spacing:0.08em;font-style:italic;}
+.photo-box img{width:100%;height:100%;object-fit:cover;display:block;}
+.tag{display:inline-block;padding:0.25rem 0.75rem;border:1px solid var(--border);border-radius:999px;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink2);font-weight:400;}
+.divider{height:1px;background:var(--border);margin:1.5rem 0;}
+.step-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.06em;color:var(--ink);line-height:1;margin-bottom:0.5rem;}
+
+/* Cover */
+#pg1 .slide-content{padding:0;}
+.cover-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0;height:55%;border-bottom:1px solid var(--border);}
+.cover-photo{position:relative;background:var(--stone);border-right:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;cursor:pointer;}
+.cover-photo:nth-child(2),.cover-photo:nth-child(4){border-right:none;}
+.cover-photo:nth-child(3),.cover-photo:nth-child(4){border-bottom:none;}
+.cover-photo img{width:100%;height:100%;object-fit:cover;display:block;opacity:0.7;filter:saturate(0.7);transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .45s ease,opacity .45s ease;}
+.cover-photo:hover img{transform:scale(1.08);opacity:1;filter:saturate(1);}
+.cover-photo .cover-label{position:absolute;left:1.4rem;bottom:1.2rem;z-index:2;color:var(--white);pointer-events:none;text-shadow:0 1px 8px rgba(0,0,0,0.35);transition:transform .45s ease;}
+.cover-photo:hover .cover-label{transform:translateY(-3px);}
+.cover-photo .cover-label .en{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.08em;line-height:1;display:block;}
+.cover-photo .cover-label .zh{font-family:'DM Sans',sans-serif;font-size:0.62rem;letter-spacing:0.28em;margin-top:0.35rem;opacity:0.9;display:block;}
+.cover-photo .cover-arrow-mini{position:absolute;right:1.2rem;top:1.2rem;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0);border:1px solid rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;color:var(--white);z-index:2;opacity:0;transform:translate(-6px,6px);transition:opacity .35s ease,transform .35s ease,background .35s ease;pointer-events:none;}
+.cover-photo:hover .cover-arrow-mini{opacity:1;transform:translate(0,0);background:rgba(255,255,255,0.15);}
+.cover-photo .cover-arrow-mini svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;}
+.cover-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.0) 35%,rgba(0,0,0,0.0) 60%,rgba(0,0,0,0.45) 100%);z-index:1;pointer-events:none;transition:opacity .45s ease;}
+.cover-photo:hover::after{opacity:0.7;}
+.cover-text-area{height:45%;display:flex;flex-direction:column;justify-content:center;padding:2.5rem 3.5rem;position:relative;}
+.cover-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,8rem);letter-spacing:0.06em;line-height:0.9;color:var(--ink);}
+.cover-sub{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink3);margin-top:0.8rem;font-weight:400;}
+.cover-arrow{position:absolute;right:3.5rem;bottom:2.5rem;width:40px;height:40px;border:1px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
+.cover-arrow:hover{background:var(--ink);}
+.cover-arrow:hover svg{fill:var(--white);}
+.cover-arrow svg{width:14px;height:14px;fill:var(--ink);}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.about-name-en{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.2rem,6.5vw,5.6rem);letter-spacing:0.04em;line-height:0.92;color:var(--ink);}
+.about-name-zh{font-family:'DM Sans',sans-serif;font-size:1rem;letter-spacing:0.4em;color:var(--ink3);font-weight:400;margin-top:0.6rem;}
+.contact-row{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border);}
+.contact-icon{width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-icon svg{width:12px;height:12px;fill:var(--ink2);}
+.contact-field{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.2rem;}
+.contact-val{font-size:0.82rem;color:var(--ink2);font-weight:300;}
+
+/* Packaging */
+.work-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;}
+.pkg-row{margin-bottom:2.6rem;}
+.pkg-divider{height:1px;background:var(--border);margin:2.6rem 0;}
+.pkg-feature{display:grid;grid-template-columns:2fr 1fr;gap:0.8rem;}
+.pkg-feature .pkg-hero{aspect-ratio:16/10;}
+.pkg-feature .pkg-side{display:flex;flex-direction:column;gap:0.6rem;}
+.pkg-feature .pkg-side .photo-box{flex:1;min-height:0;}
+.pkg-duo{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+.pkg-duo .photo-box{aspect-ratio:4/3;}
+.pkg-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+.pkg-grid3 .photo-box{aspect-ratio:4/3;border-radius:10px;}
+.pkg-meta{margin-top:0.6rem;}
+.pkg-meta-head{display:flex;justify-content:space-between;align-items:baseline;gap:0.6rem;margin-bottom:0.3rem;}
+.pkg-name{font-family:'Bebas Neue',sans-serif;font-size:0.95rem;letter-spacing:0.06em;color:var(--ink);line-height:1.1;}
+.pkg-name-zh{font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;color:var(--ink);letter-spacing:0.04em;margin-bottom:0.3rem;}
+.pkg-desc{font-size:0.78rem;line-height:1.85;color:var(--ink2);font-weight:300;}
+.pkg-desc-sm{font-size:0.74rem;line-height:1.75;color:var(--ink2);font-weight:300;}
+.pkg-grid3 .photo-box,.pkg-duo .photo-box,.pkg-feature .photo-box{border-radius:10px;}
+
+/* E-Commerce sections */
+.ec-section{margin-top:2.4rem;}
+.ec-section:first-of-type{margin-top:1.8rem;}
+.ec-section-head{display:flex;align-items:baseline;gap:1rem;padding-bottom:0.55rem;border-bottom:1px solid var(--border);margin-bottom:1.2rem;}
+.ec-section-num{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.06em;color:var(--ink3);}
+.ec-section-title{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:0.08em;color:var(--ink);font-weight:400;line-height:1;}
+.ec-section-zh{font-size:0.7rem;letter-spacing:0.22em;color:var(--ink3);margin-left:auto;}
+
+.ec-stage{background:linear-gradient(135deg,#ECEAE5 0%,#F4F2EE 100%);border-radius:14px;padding:2rem 1.6rem;overflow:hidden;position:relative;}
+
+.banner-deck{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.banner-deck .b-card{aspect-ratio:2.16/1;border-radius:5px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.10),0 1px 4px rgba(0,0,0,0.06);background:var(--white);}
+.banner-deck .b-card img{width:100%;height:100%;object-fit:cover;display:block;}
+
+.ig-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0.85rem;}
+.ig-card{background:var(--white);border-radius:6px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.10);display:flex;flex-direction:column;}
+.ig-header{padding:6px 9px 5px;display:flex;justify-content:space-between;align-items:center;}
+.ig-logo{font-family:'Grand Hotel','Brush Script MT',cursive;font-weight:400;font-size:14px;color:#262626;line-height:1;}
+.ig-icons{display:flex;gap:6px;align-items:center;}
+.ig-icons svg{width:13px;height:13px;}
+.ig-image{aspect-ratio:1/1;background:var(--stone);overflow:hidden;}
+.ig-image img{width:100%;height:100%;object-fit:cover;display:block;}
+.ig-footer{padding:6px 9px;display:flex;justify-content:space-between;align-items:center;}
+.ig-actions{display:flex;gap:7px;align-items:center;}
+.ig-actions svg,.ig-bookmark svg{width:14px;height:14px;}
+.ig-icon-stroke{stroke:#262626;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.ig-icon-fill{fill:#ed4956;stroke:#ed4956;}
+
+.story-grid-mock{display:grid;grid-template-columns:repeat(6,1fr);gap:0.8rem;}
+.story-card{background:var(--white);border-radius:14px;overflow:hidden;aspect-ratio:9/16;box-shadow:0 4px 14px rgba(0,0,0,0.12);border:6px solid var(--ink);position:relative;}
+.story-card::before{content:'';position:absolute;top:5px;left:50%;transform:translateX(-50%);width:32px;height:9px;background:var(--ink);border-radius:0 0 8px 8px;z-index:2;}
+.story-card img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* Product detail iPhone mockup */
+.pd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;background:var(--off);padding:2rem 1.6rem;border-radius:14px;}
+.pd-phone{background:var(--white);border-radius:24px;overflow:hidden;aspect-ratio:9/19;box-shadow:0 10px 28px rgba(0,0,0,0.16),0 2px 8px rgba(0,0,0,0.08);border:7px solid var(--ink);position:relative;cursor:zoom-in;transition:transform .22s ease,box-shadow .22s ease;}
+.pd-phone:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,0.22);}
+.pd-phone::before{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:54px;height:14px;background:var(--ink);border-radius:0 0 12px 12px;z-index:5;}
+.pd-phone-screen{width:100%;height:100%;overflow-y:auto;scrollbar-width:none;padding-top:24px;}
+.pd-phone-screen::-webkit-scrollbar{display:none;}
+.pd-phone-screen img{width:100%;display:block;}
+
+/* UI Design page */
+.ui-feature{display:grid;grid-template-columns:2fr 1fr;gap:0.9rem;}
+.ui-feature .ui-hero{aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:var(--stone);}
+.ui-feature .ui-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.ui-feature .ui-side{display:flex;flex-direction:column;gap:0.8rem;}
+.ui-feature .ui-side .photo-box{flex:1;min-height:0;border-radius:10px;}
+.ui-meta-row{display:flex;justify-content:space-between;align-items:flex-start;gap:1.4rem;margin-top:1.2rem;flex-wrap:wrap;}
+.ui-meta-left{display:flex;flex-direction:column;gap:0.3rem;}
+.ui-proj-num{font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.12em;color:var(--ink3);line-height:1;}
+.ui-proj-name{display:flex;align-items:center;gap:0.5rem;}
+.ui-proj-name-zh{font-size:0.95rem;font-weight:500;color:var(--ink);letter-spacing:0.04em;}
+.placeholder-tag{display:inline-block;padding:0.15rem 0.5rem;font-size:0.62rem;letter-spacing:0.08em;background:#FFF3C4;color:#A77800;border-radius:4px;font-weight:400;}
+.ui-tags{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;}
+.ui-tag{display:inline-block;padding:0.4rem 0.95rem;border:1px solid var(--border);border-radius:999px;font-size:0.7rem;letter-spacing:0.08em;color:var(--ink2);font-weight:400;background:var(--white);}
+.ui-desc{margin-top:0.9rem;font-size:0.82rem;line-height:1.85;color:var(--ink2);font-weight:300;}
+.ui-desc .placeholder-tag{margin-left:0.4rem;vertical-align:1px;}
+.ui-case-btn{display:inline-flex;align-items:center;gap:0.65rem;padding:0.65rem 0.65rem 0.65rem 1.4rem;background:var(--ink);color:var(--white);border:none;border-radius:999px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;margin-top:1.2rem;transition:background .22s ease,color .22s ease;}
+.ui-case-btn .ui-case-arrow{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--white);color:var(--ink);transition:background .22s ease,color .22s ease;}
+.ui-case-btn .ui-case-arrow svg{width:11px;height:11px;}
+.ui-case-btn:hover{background:var(--white);color:var(--ink);outline:1px solid var(--ink);}
+.ui-case-btn:hover .ui-case-arrow{background:var(--ink);color:var(--white);}
+.ui-case-hint{margin-left:0.8rem;font-size:0.72rem;color:var(--ink3);letter-spacing:0.04em;}
+
+/* Coming Soon placeholder */
+.ui-coming{
+  border:1px dashed var(--border);
+  border-radius:10px;
+  aspect-ratio:16/10;
+  background:
+    repeating-linear-gradient(135deg, rgba(0,0,0,0.025) 0 8px, transparent 8px 18px),
+    var(--stone);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:0.4rem;
+  color:var(--ink3);
+}
+.ui-coming-label{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.12em;color:var(--ink3);}
+.ui-coming-sub{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink3);}
+
+/* Case Study Modal — full upgrade */
+html.modal-open,body.modal-open{overflow:hidden !important;height:100% !important;}
+body.modal-open{position:fixed;width:100%;}
+.case-modal{position:fixed;inset:0;background:rgba(17,17,16,0.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:none;z-index:9998;justify-content:center;align-items:center;padding:2rem;overflow:hidden;}
+.case-modal.show{display:flex;animation:caseFadeIn .35s ease;}
+.case-modal.show .case-modal-box{animation:caseSlideUp .42s cubic-bezier(.2,.7,.2,1);}
+@keyframes caseFadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes caseSlideUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.case-modal-box{background:#F7F6F4;border-radius:18px;max-width:1280px;width:100%;max-height:calc(100vh - 4rem);padding:0;position:relative;box-shadow:0 36px 90px rgba(0,0,0,0.42);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column;clip-path:inset(0 round 18px);-webkit-mask-image:-webkit-radial-gradient(white,black);isolation:isolate;}
+.case-modal-close{position:sticky;top:1rem;align-self:flex-end;margin-right:1rem;margin-bottom:-2.5rem;width:42px;height:42px;border-radius:50%;background:var(--white);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.5rem;color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1;z-index:20;box-shadow:0 4px 14px rgba(0,0,0,0.18);transition:background .18s ease,color .18s ease;flex-shrink:0;}
+.case-modal-close:hover{background:var(--ink);color:var(--white);}
+.case-sec{padding:3rem 5rem;}
+.case-sec.no-pad-img{padding:3rem 0;}
+.case-hero{padding:3rem 5rem 2.5rem;}
+.case-hero-img{background:#F7F6F4;aspect-ratio:16/9;border-radius:8px;overflow:hidden;margin:0 -1rem 1.6rem;}
+.case-hero-img img{width:100%;height:100%;object-fit:contain;display:block;}
+.case-hero-meta{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:flex-start;}
+.case-hero-desc{font-size:0.86rem;line-height:1.85;color:var(--ink2);font-weight:300;max-width:560px;}
+.case-hero-tags{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.case-sec-head{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 3rem;align-items:flex-start;padding:0 5rem;margin-bottom:2rem;}
+.case-sec-titles{display:flex;flex-direction:column;gap:0.7rem;}
+.case-sec-eyebrow{font-size:0.66rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink3);font-weight:400;}
+.case-sec-title{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:0.04em;color:var(--ink);line-height:1;font-weight:400;}
+.case-sec-zh{font-size:0.78rem;letter-spacing:0.42em;color:var(--ink3);margin-top:0.2rem;}
+.case-sec-intro{font-size:0.82rem;line-height:1.85;color:var(--ink2);font-weight:300;max-width:380px;align-self:flex-end;margin-left:auto;}
+.case-sec-img-wrap{padding:0 5rem;}
+.case-sec-img-card{background:var(--white);border-radius:12px;padding:0;display:block;overflow:hidden;}
+.case-sec-img-card img{width:100%;display:block;}
+.case-toggle{display:flex;justify-content:center;padding:2rem;}
+.case-toggle-group{display:inline-flex;background:var(--white);border-radius:999px;padding:5px;box-shadow:0 4px 14px rgba(0,0,0,0.08);}
+.case-toggle-btn{background:transparent;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.3em;color:var(--ink3);padding:0.65rem 2rem;border-radius:999px;transition:background .22s ease,color .22s ease;}
+.case-toggle-btn.active{background:var(--ink);color:var(--white);}
+.case-screens{padding:0 5rem 3rem;display:flex;flex-direction:column;gap:3rem;}
+.case-screens[hidden]{display:none;}
+.pair-row{display:flex;flex-direction:column;gap:1.2rem;}
+.pair-head{display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:baseline;border-bottom:1px solid var(--border);padding-bottom:0.6rem;}
+.pair-head-left{display:flex;align-items:baseline;gap:0.7rem;}
+.pair-num{font-family:'Bebas Neue',sans-serif;font-size:0.95rem;letter-spacing:0.12em;color:var(--ink3);}
+.pair-name-zh{font-size:0.9rem;font-weight:500;color:var(--ink);letter-spacing:0.05em;}
+.pair-name-en{font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink3);}
+.pair-bodies{display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:start;}
+.web-frame{background:var(--white);border-radius:10px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,0.18),0 2px 6px rgba(0,0,0,0.08);}
+.web-bar{display:flex;align-items:center;gap:0.6rem;padding:8px 12px;background:#1F1F1E;border-bottom:1px solid #0A0A09;}
+.web-dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+.web-dot.red{background:#FF5F57;}
+.web-dot.yellow{background:#FEBC2E;}
+.web-dot.green{background:#27C840;}
+.web-url{flex:1;background:#3D3D3B;border-radius:6px;padding:4px 12px;font-size:0.65rem;color:#D9D9D6;letter-spacing:0.02em;text-align:center;font-family:'DM Sans',sans-serif;}
+.web-viewport{height:520px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#cfcfcf transparent;background:var(--white);}
+.web-viewport::-webkit-scrollbar{width:6px;}
+.web-viewport::-webkit-scrollbar-thumb{background:#cfcfcf;border-radius:3px;}
+.web-viewport img{width:100%;display:block;}
+.case-phone-frame{width:280px;height:540px;border:7px solid var(--ink);border-radius:34px;background:var(--white);overflow:hidden;position:relative;box-shadow:0 12px 28px rgba(0,0,0,0.16);margin:0 auto;}
+.case-phone-frame::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:80px;height:18px;background:var(--ink);border-radius:0 0 14px 14px;z-index:5;}
+.case-phone-viewport{width:100%;height:100%;overflow-y:auto;scrollbar-width:none;padding-top:26px;}
+.case-phone-viewport::-webkit-scrollbar{display:none;}
+.case-phone-viewport img{width:100%;display:block;}
+.case-cta{text-align:center;padding:3.5rem 5rem 4rem;}
+.case-cta-eyebrow{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.6rem;}
+.case-cta-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:0.06em;color:var(--ink);line-height:1;margin-bottom:0.6rem;}
+.case-cta-sub{font-size:0.82rem;color:var(--ink2);margin-bottom:1.6rem;}
+.case-figma-btn{display:inline-flex;align-items:center;gap:0.7rem;padding:0.7rem 0.7rem 0.7rem 1.4rem;background:var(--ink);color:var(--white);border:1px solid var(--ink);border-radius:999px;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;transition:background .22s ease,color .22s ease;}
+.case-figma-btn .figma-logo{width:18px;height:26px;flex-shrink:0;}
+.case-figma-btn .case-arrow-circle{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--white);color:var(--ink);transition:background .22s ease,color .22s ease;}
+.case-figma-btn .case-arrow-circle svg{width:11px;height:11px;}
+.case-figma-btn:hover{background:var(--white);color:var(--ink);}
+.case-figma-btn:hover .case-arrow-circle{background:var(--ink);color:var(--white);}
+
+/* Modal */
+.img-modal{position:fixed;inset:0;background:rgba(17,17,16,0.94);display:none;z-index:9999;padding:2rem;justify-content:center;align-items:flex-start;overflow-y:auto;cursor:zoom-out;}
+.img-modal.show{display:flex;}
+.img-modal img{max-width:560px;width:100%;height:auto;border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,0.7);}
+.img-modal-close{position:fixed;top:1.2rem;right:1.2rem;width:38px;height:38px;border-radius:50%;background:var(--white);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10000;font-size:1.3rem;color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1;}
+
+/* Contact */
+.contact-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,6rem);line-height:0.92;letter-spacing:0.04em;}
+.contact-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem;margin-top:2.5rem;}
+
+/* ============================================================
+   RWD — Tablet 768–1023px
+   ============================================================ */
+.nav-toggle{display:none;}
+@media (max-width:1023px){
+  header{padding:0 1.4rem;}
+  nav button{padding:0 0.55rem;font-size:0.66rem;}
+  .slide-content{padding:1.8rem 1.6rem;}
+  .work-header{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .work-header > div:last-child{text-align:left;max-width:none;}
+  /* Featured 卡片：hero → details → meta（介紹在最下） */
+  .pkg-feature{display:flex;flex-direction:column;gap:0.8rem;}
+  .pkg-feature > div:first-child{display:contents;}
+  .pkg-feature .pkg-hero{order:1;aspect-ratio:16/10;}
+  .pkg-feature .pkg-side{order:2;display:grid;grid-template-columns:1fr 1fr;flex-direction:row;gap:0.6rem;}
+  .pkg-feature .pkg-meta{order:3;margin-top:0.4rem;}
+  .pkg-grid3{grid-template-columns:repeat(2,1fr);}
+  /* About Me 重排（平板與手機一致）：eyebrow → TERENCE → 黃 承 毓 → 照片 → 三框 → 其餘 */
+  .about-grid{display:flex;flex-direction:column;gap:0;grid-template-columns:none;}
+  .about-grid > div{display:contents;}
+  .about-grid > div:first-child > *{order:10;width:100%;}
+  .about-grid > div:first-child > .eyebrow:first-of-type{order:1;}
+  .about-grid > div:first-child > .about-name-en{order:2;}
+  .about-grid > div:first-child > .about-name-zh{order:3;margin-bottom:1.2rem;}
+  .about-grid > div:last-child{margin-bottom:1.2rem;}
+  .about-grid > div:last-child > *{order:5;width:100%;}
+  .about-grid > div:last-child > *:first-child{order:4;aspect-ratio:4/5 !important;width:100%;}
+  .about-name-en{font-size:clamp(2.4rem,8vw,4rem);}
+  .cover-big{font-size:clamp(3rem,11vw,6.5rem);}
+  .banner-deck{grid-template-columns:repeat(2,1fr);}
+  .ig-grid{grid-template-columns:repeat(3,1fr);}
+  .story-grid-mock{grid-template-columns:repeat(4,1fr);}
+  .pd-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+  .case-modal{padding:1.2rem;}
+  .case-hero,.case-cta{padding:2rem 2.4rem;}
+  .case-sec-head,.case-screens{padding-left:2.4rem;padding-right:2.4rem;}
+  .case-sec-head{grid-template-columns:1fr;gap:1rem;}
+  .case-sec-img-wrap{padding:0 2.4rem;}
+  .case-sec-title{font-size:2.2rem;}
+  .pair-bodies{grid-template-columns:1fr;gap:20px;}
+  .case-phone-frame{width:240px;height:480px;}
+  .web-viewport{height:420px;}
+  .case-modal-close{top:1.4rem;right:1.4rem;}
+}
+
+/* ============================================================
+   RWD — Mobile 481–767px (hamburger nav + single column)
+   ============================================================ */
+@media (max-width:767px){
+  html,body{overflow-x:hidden;}
+  header{padding:0 1rem;height:48px;}
+  .logo-mark{font-size:0.95rem;}
+  .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;width:32px;height:32px;background:none;border:none;cursor:pointer;gap:4px;padding:0;z-index:200;}
+  .nav-toggle span{display:block;width:18px;height:1.6px;background:var(--ink);transition:transform .25s ease,opacity .2s ease;}
+  body.nav-open .nav-toggle span:nth-child(1){transform:translateY(5.6px) rotate(45deg);}
+  body.nav-open .nav-toggle span:nth-child(2){opacity:0;}
+  body.nav-open .nav-toggle span:nth-child(3){transform:translateY(-5.6px) rotate(-45deg);}
+  nav{position:fixed;top:48px;left:0;right:0;bottom:0;background:var(--white);flex-direction:column;align-items:stretch;transform:translateX(100%);transition:transform .35s ease;z-index:150;padding:1.2rem 1.4rem;gap:0.5rem;overflow-y:auto;}
+  body.nav-open nav{transform:translateX(0);}
+  nav button{width:100%;text-align:left;padding:1.1rem 0.5rem;font-size:0.9rem;border-bottom:1px solid var(--border);height:auto;letter-spacing:0.1em;}
+  nav button.active{border-bottom-color:var(--ink);font-weight:600;}
+  .page-counter{font-size:0.62rem;min-width:60px;}
+  .slide-label{display:none;}
+  .slide-content{padding:1.2rem 1.1rem;}
+  .slide-footer{height:32px;padding:0 0.8rem;}
+  .slide-footer-text{font-size:0.54rem;letter-spacing:0.12em;}
+  .slide-footer-logo{font-size:0.7rem;}
+  img{max-width:100%;height:auto;}
+  .work-header h2.display{font-size:clamp(2.2rem,9vw,3rem);}
+  .body-text{font-size:0.78rem;line-height:1.75;}
+  .divider{margin:1rem 0;}
+  #pg1 .slide-content{padding:0;}
+  .cover-grid{height:50%;}
+  .cover-photo .cover-label .en{font-size:1.05rem;}
+  .cover-photo .cover-label .zh{font-size:0.55rem;letter-spacing:0.22em;}
+  .cover-text-area{padding:1.5rem 1.4rem;}
+  .cover-big{font-size:clamp(2.6rem,13vw,4.2rem);}
+  .cover-sub{font-size:0.6rem;letter-spacing:0.16em;}
+  .cover-arrow{right:1.4rem;bottom:1.4rem;width:42px;height:42px;}
+  /* About Me 重排：姓名 → 照片 → 三框 → 簡介…… */
+  .about-grid{display:flex;flex-direction:column;gap:0;}
+  .about-grid > div{display:contents;}
+  .about-grid > div:first-child > *{order:10;}
+  .about-grid > div:first-child > .eyebrow:first-of-type{order:1;}
+  .about-grid > div:first-child > .about-name-en{order:2;}
+  .about-grid > div:first-child > .about-name-zh{order:3;margin-bottom:1.2rem;}
+  .about-grid > div:last-child{margin-bottom:1.2rem;}
+  .about-grid > div:last-child > *{order:5;}
+  .about-grid > div:last-child > *:first-child{order:4;aspect-ratio:4/5 !important;}
+  .about-name-en{font-size:2.6rem;}
+  .about-name-zh{font-size:0.85rem;letter-spacing:0.3em;}
+  /* Featured 卡片：手機保持 hero → details → meta */
+  .pkg-feature{display:flex;flex-direction:column;gap:0.8rem;}
+  .pkg-feature > div:first-child{display:contents;}
+  .pkg-feature .pkg-hero{order:1;}
+  .pkg-feature .pkg-side{order:2;display:grid;grid-template-columns:1fr 1fr;flex-direction:row;gap:0.5rem;}
+  .pkg-feature .pkg-meta{order:3;margin-top:0.4rem;}
+  .pkg-grid3{grid-template-columns:1fr;gap:1.4rem;}
+  .pkg-duo{grid-template-columns:1fr;}
+  .pkg-divider{margin:1.6rem 0;}
+  .pkg-name{font-size:0.85rem;}
+  .pkg-name-zh{font-size:0.74rem;}
+  .pkg-desc,.pkg-desc-sm{font-size:0.74rem;line-height:1.75;}
+  .banner-deck{grid-template-columns:1fr;gap:0.8rem;}
+  .ec-stage{padding:1.2rem 1rem;}
+  .ig-grid{grid-template-columns:repeat(2,1fr);gap:0.6rem;}
+  .story-grid-mock{grid-template-columns:repeat(3,1fr);gap:0.6rem;}
+  .pd-grid{grid-template-columns:1fr 1fr;gap:1rem;padding:1.2rem 1rem;}
+  .pd-phone{aspect-ratio:9/17;}
+  .ec-section-head{flex-wrap:wrap;gap:0.5rem;}
+  .ec-section-title{font-size:1.1rem;}
+  .ec-section-zh{font-size:0.62rem;letter-spacing:0.18em;}
+  .ui-feature{grid-template-columns:1fr;}
+  .ui-feature .ui-side{flex-direction:row;gap:0.5rem;}
+  .ui-tags{flex-wrap:wrap;gap:0.35rem;}
+  .ui-tag{font-size:0.6rem;padding:0.32rem 0.7rem;}
+  .ui-case-btn{padding:0.7rem 0.7rem 0.7rem 1.2rem;font-size:0.65rem;letter-spacing:0.16em;height:auto;min-height:44px;}
+  .ui-case-hint{display:block;margin-left:0;margin-top:0.5rem;}
+  .case-modal{padding:0.6rem;}
+  .case-modal-box{border-radius:18px;max-width:100%;clip-path:inset(0 round 18px);}
+  .case-hero,.case-cta{padding:1.6rem 1.2rem;}
+  .case-sec-head{grid-template-columns:1fr;gap:0.8rem;padding:0 1.2rem;}
+  .case-sec-img-wrap{padding:0 1.2rem;}
+  .case-screens{padding:0 1.2rem 2rem;gap:1.8rem;}
+  .case-sec-title{font-size:1.8rem;}
+  .pair-bodies{grid-template-columns:1fr;gap:16px;}
+  .case-phone-frame{width:220px;height:440px;}
+  .web-viewport{height:340px;}
+  .case-cta-title{font-size:26px;}
+  .case-modal-close{top:0.8rem;right:0.8rem;width:36px;height:36px;}
+  .img-modal{padding:1rem;}
+  .contact-big{font-size:clamp(2.4rem,11vw,3.6rem);}
+  .contact-info-grid{grid-template-columns:1fr;}
+  .nav-arrows button{width:44px;height:44px;}
+  .nav-arrows{padding:0.5rem;gap:0.6rem;}
+}
+
+@media (max-width:767px) and (hover:none){
+  .cover-photo img{opacity:1;filter:saturate(1);}
+  .cover-photo::after{opacity:0.45;}
+  .cover-photo .cover-arrow-mini{opacity:0.85;transform:translate(0,0);background:rgba(255,255,255,0.15);}
+}
+
+/* ============================================================
+   RWD — Small Mobile ≤480px
+   ============================================================ */
+@media (max-width:480px){
+  header{padding:0 0.8rem;height:46px;}
+  .logo-mark{font-size:0.85rem;letter-spacing:0.1em;}
+  nav button{font-size:0.82rem;padding:0.95rem 0.4rem;}
+  .slide-content{padding:1rem 0.9rem;}
+  .work-header h2.display{font-size:clamp(1.9rem,10vw,2.6rem);}
+  .body-text{font-size:0.74rem;line-height:1.7;}
+  .eyebrow{font-size:0.56rem;letter-spacing:0.2em;}
+  .cover-big{font-size:clamp(2.2rem,14vw,3.2rem);}
+  .cover-sub{font-size:0.55rem;letter-spacing:0.14em;}
+  .cover-text-area{padding:1.1rem 1rem;}
+  .cover-photo .cover-label .en{font-size:0.85rem;}
+  .cover-photo .cover-label .zh{font-size:0.5rem;letter-spacing:0.2em;}
+  .about-name-en{font-size:2.1rem;}
+  .about-name-zh{font-size:0.75rem;letter-spacing:0.28em;}
+  .tag{font-size:0.55rem;padding:0.22rem 0.65rem;}
+  .pkg-feature .pkg-side{flex-direction:column;}
+  .pkg-name{font-size:0.78rem;}
+  .pkg-name-zh{font-size:0.68rem;}
+  .pkg-desc,.pkg-desc-sm{font-size:0.68rem;line-height:1.7;}
+  .ig-grid{grid-template-columns:repeat(2,1fr);gap:0.5rem;}
+  .ig-logo{font-size:11px;}
+  .story-grid-mock{grid-template-columns:repeat(2,1fr);gap:0.5rem;}
+  .pd-grid{grid-template-columns:1fr;}
+  .pd-phone{aspect-ratio:9/19;}
+  .ui-feature .ui-side{flex-direction:column;}
+  .ui-case-btn{font-size:0.6rem;letter-spacing:0.14em;padding:0.7rem 0.7rem 0.7rem 1.1rem;}
+  .case-sec-title{font-size:1.5rem;}
+  .case-cta-title{font-size:22px;}
+  .case-toggle-btn{font-size:0.7rem;padding:0.55rem 1.2rem;letter-spacing:0.2em;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">TERENCE</div>
+  <nav id="top-nav">
+    <button onclick="goTo(0)" class="active">Cover</button>
+    <button onclick="goTo(1)">About Me</button>
+    <button onclick="goTo(2)">Graphic</button>
+    <button onclick="goTo(3)">Packaging</button>
+    <button onclick="goTo(4)">UI Design</button>
+    <button onclick="goTo(5)">E-Commerce</button>
+  </nav>
+  <div class="page-counter"><strong id="cur-num">01</strong> / <span id="tot-num">06</span></div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menu" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</header>
+
+<div class="slides-wrap">
+<div class="slides" id="slides">
+
+<!-- ─── PAGE 1: COVER ─── -->
+<div class="slide" id="pg1">
+  <div class="slide-body">
+    <div class="slide-label"><span>Portfolio · Terence</span></div>
+    <div class="slide-content">
+      <div class="cover-grid">
+        <div class="cover-photo" onclick="goTo(2)" title="Graphic">
+          <img src="assets/images/COVER/graphic.jpg" alt="Graphic">
+          <span class="cover-label"><span class="en">GRAPHIC</span><span class="zh">平面設計</span></span>
+          <span class="cover-arrow-mini"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </div>
+        <div class="cover-photo" onclick="goTo(3)" title="Packaging">
+          <img src="assets/images/COVER/Packaging.jpg" alt="Packaging">
+          <span class="cover-label"><span class="en">PACKAGING</span><span class="zh">包裝設計</span></span>
+          <span class="cover-arrow-mini"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </div>
+        <div class="cover-photo" onclick="goTo(4)" title="UI Design">
+          <img src="assets/images/COVER/UIdesign.jpg" alt="UI Design">
+          <span class="cover-label"><span class="en">UI DESIGN</span><span class="zh">介面設計</span></span>
+          <span class="cover-arrow-mini"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </div>
+        <div class="cover-photo" onclick="goTo(5)" title="E-Commerce">
+          <img src="assets/images/COVER/E-Commerce.jpg" alt="E-Commerce">
+          <span class="cover-label"><span class="en">E-COMMERCE</span><span class="zh">電商 · 社群</span></span>
+          <span class="cover-arrow-mini"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </div>
+      </div>
+      <div class="cover-text-area">
+        <div class="cover-big">PORTFOLIO</div>
+        <div class="cover-sub">Graphic · Packaging · UI · E-Commerce · Branding</div>
+        <div class="cover-arrow" onclick="goTo(1)">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="slide-footer-text">Portfolio · Terence 黃承毓</span>
+    <span class="slide-footer-logo">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- ─── PAGE 2: ABOUT ME ─── -->
+<div class="slide" id="pg2">
+  <div class="slide-body">
+    <div class="slide-label"><span>About Me</span></div>
+    <div class="slide-content">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">Page 02 — 關於我</p>
+          <h1 class="about-name-en">TERENCE</h1>
+          <div class="about-name-zh">黃 承 毓</div>
+
+          <div class="divider"></div>
+          <p class="body-text" style="margin-bottom:1rem;">
+            在設計領域工作已約六年的時間，擅長平面設計、包裝設計、UI設計、電商與社群平台廣告宣傳設計，努力在商業與美感中取得平衡，讓美落實在生活的每個角落，讓美的設計解決人的需求。
+          </p>
+
+          <div class="divider"></div>
+          <p class="eyebrow" style="margin-bottom:0.6rem;">Tools &amp; Skills</p>
+          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.2rem;">
+            <span class="tag">Illustrator</span>
+            <span class="tag">Photoshop</span>
+            <span class="tag">InDesign</span>
+            <span class="tag">Figma</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+
+          <p class="eyebrow" style="margin-bottom:0.6rem;">Expertise / 擅長領域</p>
+          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+            <span class="tag">平面設計</span>
+            <span class="tag">包裝設計</span>
+            <span class="tag">網頁設計</span>
+            <span class="tag">UI 介面設計</span>
+            <span class="tag">電商 &amp; 社群平台</span>
+          </div>
+
+          <div class="divider"></div>
+          <p class="eyebrow" style="margin-bottom:0.8rem;">Contact / 聯絡資訊</p>
+          <div class="contact-row" style="border-top:1px solid var(--border);">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div class="contact-field">Email</div>
+              <div class="contact-val">hcy1718@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div class="contact-field">Location</div>
+              <div class="contact-val">Taipei, Taiwan</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <p class="eyebrow" style="margin-bottom:0.8rem;">Education / 學歷</p>
+          <div class="contact-row" style="border-top:1px solid var(--border);margin-bottom:1rem;">
+            <div style="flex:1;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                <div style="font-size:0.78rem;font-weight:500;color:var(--ink);">嶺東科技大學 Ling Tung University</div>
+                <span class="caption">2014 – 2018</span>
+              </div>
+              <div class="caption" style="margin-top:0.1rem;">Field of study</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <p class="eyebrow" style="margin-bottom:0.8rem;">Work Experience</p>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div class="contact-row" style="border-top:1px solid var(--border);">
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                  <div style="font-size:0.78rem;font-weight:500;color:var(--ink);">飛速移動股份有限公司</div>
+                  <span class="caption">Feb 2025 – Aug 2025</span>
+                </div>
+                <div class="caption" style="margin-top:0.1rem;">視覺設計師</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                  <div style="font-size:0.78rem;font-weight:500;color:var(--ink);">項依有限公司</div>
+                  <span class="caption">Aug 2024 – Nov 2024</span>
+                </div>
+                <div class="caption" style="margin-top:0.1rem;">平面展場設計</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                  <div style="font-size:0.78rem;font-weight:500;color:var(--ink);">和盟電子商務股份有限公司</div>
+                  <span class="caption">Jul 2021 – Apr 2024</span>
+                </div>
+                <div class="caption" style="margin-top:0.1rem;">網頁設計師</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                  <div style="font-size:0.78rem;font-weight:500;color:var(--ink);">無敵家娛樂股份有限公司</div>
+                  <span class="caption">Feb 2020 – Feb 2021</span>
+                </div>
+                <div class="caption" style="margin-top:0.1rem;">平面設計師</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                  <div style="font-size:0.78rem;font-weight:500;color:var(--ink);">智優國際有限公司</div>
+                  <span class="caption">May 2019 – Nov 2019</span>
+                </div>
+                <div class="caption" style="margin-top:0.1rem;">包裝設計師</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="photo-box" style="aspect-ratio:3/4;border-radius:12px;overflow:hidden;"><img src="assets/images/Profile Photo.jpg" alt="Terence" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;">
+            <div style="border:1px solid var(--border);border-radius:8px;padding:0.8rem;text-align:center;">
+              <div class="display" style="font-size:1.8rem;">6+</div>
+              <div class="caption">Years Exp.</div>
+            </div>
+            <div style="border:1px solid var(--border);border-radius:8px;padding:0.8rem;text-align:center;">
+              <div class="display" style="font-size:1.8rem;">60+</div>
+              <div class="caption">Projects</div>
+            </div>
+            <div style="border:1px solid var(--border);border-radius:8px;padding:0.8rem;text-align:center;">
+              <div class="display" style="font-size:1.8rem;">30+</div>
+              <div class="caption">Clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="slide-footer-text">About Me</span>
+    <span class="slide-footer-logo">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- ─── PAGE 3: GRAPHIC DESIGN ─── -->
+<div class="slide" id="pg4">
+  <div class="slide-body">
+    <div class="slide-label"><span>Graphic Design</span></div>
+    <div class="slide-content">
+      <div class="work-header">
+        <div>
+          <p class="eyebrow">Page 03 — Selected Work</p>
+          <h2 class="display" style="font-size:clamp(2.5rem,5vw,4rem);">GRAPHIC<br>DESIGN</h2>
+          <p class="body-text" style="margin-top:0.6rem;">平面設計</p>
+        </div>
+        <div style="text-align:right;max-width:280px;">
+          <p class="body-text">品牌識別、編輯排版、海報設計，於印刷與數位媒介之間進行視覺溝通。</p>
+        </div>
+      </div>
+
+      <!-- Project 01 — featured -->
+      <div class="pkg-row pkg-feature">
+        <div>
+          <div class="photo-box pkg-hero"><img src="assets/images/Graphic/Graphic-01-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 01</div><div class="pkg-name-zh">健康餐盒CIS設計</div></div><span class="tag">CIS設計</span></div>
+            <p class="pkg-desc">此 CIS 設計以「餐盒如珠寶盒」為核心概念，將健康餐盒提升為精緻且值得期待的生活儀式。LOGO 以幾何盒型結合星體軌跡意象，象徵每一份餐點都像被細心收藏的能量寶石，傳遞高級、健康與日常質感兼具的品牌形象。</p>
+          </div>
+        </div>
+        <div class="pkg-side">
+          <div class="photo-box"><img src="assets/images/Graphic/Graphic-01-細節圖1.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/Graphic/Graphic-01-細節圖2.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;">
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-02-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 02</div><div class="pkg-name-zh">美學工作室LOGO設計</div></div><span class="tag">LOGO設計</span></div>
+            <p class="pkg-desc-sm">LOGO 以柔和線條描繪女性輪廓，結合拱形框線與雲朵般的品牌字體，傳遞輕盈、溫柔且具療癒感的美學氛圍。整體視覺以低飽和米白色系呈現，象徵肌膚保養、美學修復與身心放鬆，打造出細緻高級、安心專業的美業品牌形象。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-03-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 03</div><div class="pkg-name-zh">個人工作室LOGO設計</div></div><span class="tag">LOGO設計</span></div>
+            <p class="pkg-desc-sm">此 LOGO 以圓形構圖結合海浪、雲氣與留白意象，呈現日系美學中「靜、流動、平衡」的精神。俐落的黑白對比與手感線條，象徵個人工作室在創作中兼具理性結構與自然感受，打造出沉穩、現代且具有東方氣韻的品牌識別。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <!-- Project 04 — featured -->
+      <div class="pkg-row pkg-feature">
+        <div>
+          <div class="photo-box pkg-hero"><img src="assets/images/Graphic/Graphic-04-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 04</div><div class="pkg-name-zh">澎湖政府活動上衣設計</div></div><span class="tag">服裝設計</span></div>
+            <p class="pkg-desc">此活動服裝以澎湖海洋意象為核心，將浪花紋理融入領口與門襟細節，呼應島嶼、海風與地方文化特色。整體以白色與深藍色呈現清爽、專業且具辨識度的活動形象，讓政府活動服兼具在地記憶與團隊一致性。</p>
+          </div>
+        </div>
+        <div class="pkg-side">
+          <div class="photo-box"><img src="assets/images/Graphic/Graphic-04-細節圖1.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/Graphic/Graphic-04-細節圖2.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;">
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-05-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 05</div><div class="pkg-name-zh">美業招牌設計</div></div><span class="tag">招牌設計</span></div>
+            <p class="pkg-desc-sm">此招牌以柔和裸粉色與白色線條打造溫柔乾淨的品牌印象，呼應美容業重視肌膚修護與細緻呵護的專業感。整體視覺簡約明亮，傳遞安心、親和且具質感的美肌服務形象。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-06-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 06</div><div class="pkg-name-zh">美業優惠券設計</div></div><span class="tag">票券設計</span></div>
+            <p class="pkg-desc-sm">此優惠券延續品牌柔和裸粉色與簡約白線設計，營造精緻、溫柔且具高級感的美容服務印象。版面以清楚的課程資訊與票券式分區呈現，提升專業度與實際使用的便利性。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-grid3">
+        <div>
+          <div class="photo-box" style="aspect-ratio:1/1;border-radius:10px;"><img src="assets/images/Graphic/Graphic-07-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 07</div><div class="pkg-name-zh">行銷公司名片設計</div></div><span class="tag">名片設計</span></div>
+            <p class="pkg-desc-sm">此名片以極簡黑白灰為主軸，搭配手寫感標誌與俐落線條，呈現行銷設計公司的專業、創意與現代感。版面保留大量留白，讓品牌識別與資訊更清晰，傳遞簡潔而有記憶點的視覺形象。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:1/1;border-radius:10px;"><img src="assets/images/Graphic/Graphic-08-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 08</div><div class="pkg-name-zh">乾貨商名片設計</div></div><span class="tag">名片設計</span></div>
+            <p class="pkg-desc-sm">此名片以香菇圖像結合厚實書法字體，呈現批發零售商的在地感與食材專業形象。淡灰色扇形紋理呼應傳統市場與農產質樸氛圍，讓品牌在簡潔中保有溫度與記憶點。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:1/1;border-radius:10px;"><img src="assets/images/Graphic/Graphic-09-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 09</div><div class="pkg-name-zh">電子商務名片設計</div></div><span class="tag">名片設計</span></div>
+            <p class="pkg-desc-sm">此名片以清新的綠色作為主視覺，呼應電子商務平台的活力、效率與數位連結感。版面將公司資訊、聯絡方式與認證標章清楚分層，展現專業可信賴的企業形象。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;">
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-10-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 10</div><div class="pkg-name-zh">活動會展場設計</div></div><span class="tag">展場設計</span></div>
+            <p class="pkg-desc-sm">此展場拍照區以金融大樓為主體，結合科技城市、光束網格與未來感視覺，象徵金融產業持續創新與邁向智慧化發展。整體以深藍綠色調搭配金色標題，呈現穩重、專業且具年度盛會氣勢的品牌形象。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-11-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 11</div><div class="pkg-name-zh">活動會展場設計</div></div><span class="tag">展場設計</span></div>
+            <p class="pkg-desc-sm">此主要拍照區以金融大樓為核心，結合未來科技城市與光束網格，象徵金融產業在數位時代中的創新、穩健與前瞻發展。背後的紅色水晶球呼應企業 LOGO，帶有太陽與光明的意象，傳遞年度會凝聚團隊、照亮未來的品牌精神。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <!-- Project 12 — solo row, full composite image -->
+      <div class="pkg-row">
+        <div class="photo-box" style="aspect-ratio:1672/941;border-radius:10px;background:transparent;"><img src="assets/images/Graphic/Graphic-12-主圖.jpg" alt="" style="object-fit:contain;"></div>
+        <div class="pkg-meta" style="display:grid;grid-template-columns:1fr 2fr;gap:1.2rem;align-items:start;margin-top:0.8rem;">
+          <div><div class="pkg-name">PROJECT 12</div><div class="pkg-name-zh">保養品記者發布會展場設計</div><span class="tag">展場設計</span></div>
+          <p class="pkg-desc">此產品發布記者會以低飽和淺藍與米白色系為主，結合柔和光感與保濕水潤意象，呈現保養品品牌乾淨、專業且高級的科技美學。展場透過大面積背板、產品展示與花藝佈置，營造如肌膚被光與水分包覆的細緻氛圍，傳遞「逆齡時光，完美上市」的新品形象。</p>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-grid3">
+        <div>
+          <div class="photo-box" style="aspect-ratio:1/1;border-radius:10px;"><img src="assets/images/Graphic/Graphic-13-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 13</div><div class="pkg-name-zh">美業優惠券與感謝小卡</div></div><span class="tag">票券設計</span></div>
+            <p class="pkg-desc-sm">此設計以灰白低飽和色調與簡潔線框呈現乾淨專業的美業形象，搭配保養品與柔和場景，傳遞細緻呵護與貼心服務感。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:1/1;border-radius:10px;"><img src="assets/images/Graphic/Graphic-14-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 14</div><div class="pkg-name-zh">美業MENU設計</div></div><span class="tag">MENU設計</span></div>
+            <p class="pkg-desc-sm">此價目表以白色、大理石紋與花卉元素呈現乾淨優雅的美業氛圍，搭配清楚分區與留白排版，讓價格資訊易讀並維持高級專業感。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:1/1;border-radius:10px;"><img src="assets/images/Graphic/Graphic-15-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 15</div><div class="pkg-name-zh">美業MENU設計</div></div><span class="tag">MENU設計</span></div>
+            <p class="pkg-desc-sm">此價目表以透明壓克力、暖金色與柔和光影營造高級美業氛圍，搭配清楚分區與細緻排版，呈現專業且具質感的服務資訊。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-grid3">
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/5;border-radius:10px;"><img src="assets/images/Graphic/Graphic-16-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 16</div><div class="pkg-name-zh">髮廊MENU設計</div></div><span class="tag">MENU設計</span></div>
+            <p class="pkg-desc-sm">此價目表以藍白與米色調區分活動與價格資訊，搭配分區卡片與重點標示，呈現髮廊年輕專業形象並提升閱讀便利性。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/5;border-radius:10px;"><img src="assets/images/Graphic/Graphic-17-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 17</div><div class="pkg-name-zh">美甲課程講義設計</div></div><span class="tag">簡報設計</span></div>
+            <p class="pkg-desc-sm">此講義以奶茶色與乾淨排版呈現美甲課程的細緻感，搭配作品照片與分段內容，讓學習資訊清楚易讀並兼具專業美感。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/5;border-radius:10px;"><img src="assets/images/Graphic/Graphic-18-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 18</div><div class="pkg-name-zh">女性保健食品DM設計</div></div><span class="tag">DM設計</span></div>
+            <p class="pkg-desc-sm">此 DM 以柔粉色、光感粒子與防護意象，呈現女性保健食品溫柔安心的專業形象，強化守護私密健康的產品訴求。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-grid3">
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-19-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 19</div><div class="pkg-name-zh">補習班DM設計</div></div><span class="tag">DM設計</span></div>
+            <p class="pkg-desc-sm">此 DM 以學生形象與榜單式排版強化升學成果，搭配藍黃配色與清楚課程資訊，呈現專業可靠的招生形象。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-20-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 20</div><div class="pkg-name-zh">澎湖語音導覽海報設計</div></div><span class="tag">海報設計</span></div>
+            <p class="pkg-desc-sm">此海報以海洋藍、珊瑚與海龜插畫呈現澎湖自然特色，搭配三步驟導覽與 QR code，提升活動互動性與在地探索體驗。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-21-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 21</div><div class="pkg-name-zh">甜品MENU設計</div></div><span class="tag">MENU設計</span></div>
+            <p class="pkg-desc-sm">此 MENU 以淡綠色、木質元素與甜品實拍，呈現古早味甜品的溫暖手作感；清楚分類與留白排版，讓品項易讀並保留親切懷舊氛圍。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-grid3">
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-22-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 22</div><div class="pkg-name-zh">飯糰店MENU設計</div></div><span class="tag">MENU設計</span></div>
+            <p class="pkg-desc-sm">此 MENU 以紅橘色與大字標題打造鮮明記憶點，搭配飯糰實拍與分類式排版，呈現熱情手作感並提升點餐效率。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-23-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 23</div><div class="pkg-name-zh">髮廊MENU設計</div></div><span class="tag">MENU設計</span></div>
+            <p class="pkg-desc-sm">此 MENU 以黑白灰色調與俐落排版呈現髮廊的高級專業感，透過留白、細線與價格分層，讓資訊清楚易讀並營造沉穩時尚氛圍。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box" style="aspect-ratio:4/3;border-radius:10px;"><img src="assets/images/Graphic/Graphic-24-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 24</div><div class="pkg-name-zh">髮廊活動MENU設計</div></div><span class="tag">MENU設計</span></div>
+            <p class="pkg-desc-sm">此活動限定 MENU 以銀灰金屬質感呈現髮廊的時尚與高級感，搭配設計師資訊與 QR code，提升顧客了解作品與預約的便利性。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="slide-footer-text">Graphic Design</span>
+    <span class="slide-footer-logo">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- ─── PAGE 4: PACKAGING ─── -->
+<div class="slide" id="pg5">
+  <div class="slide-body">
+    <div class="slide-label"><span>Packaging Design</span></div>
+    <div class="slide-content">
+      <div class="work-header">
+        <div>
+          <p class="eyebrow">Page 04 — Selected Work</p>
+          <h2 class="display" style="font-size:clamp(2.5rem,5vw,4rem);">PACKAGING<br>DESIGN</h2>
+          <p class="body-text" style="margin-top:0.6rem;">包裝設計</p>
+        </div>
+        <div style="text-align:right;max-width:280px;">
+          <p class="body-text">針對外盒、瓶標、贈禮系列等品項規劃從概念、視覺到印刷完稿的整體包裝設計，兼顧品牌調性、陳列效果與通路機能。</p>
+        </div>
+      </div>
+
+      <div class="pkg-row pkg-feature">
+        <div>
+          <div class="photo-box pkg-hero"><img src="assets/images/Packaging/packaging-01-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head">
+              <div><div class="pkg-name">PROJECT 01</div><div class="pkg-name-zh">女性保健食品外盒 + 鋁帶</div></div>
+              <span class="tag">包裝設計</span>
+            </div>
+            <p class="pkg-desc">本款女性保健食品包裝以柔和漸層色彩為主視覺，結合簡約排版呈現清新且專業的品牌形象。設計透過溫潤色調與細膩細節，傳遞溫和調理與日常保養的安心感，營造兼具質感與親和力的產品印象。</p>
+          </div>
+        </div>
+        <div class="pkg-side">
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-01-外盒細節圖.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-01-鋁帶圖細節圖.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-grid3">
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-03-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 02</div><div class="pkg-name-zh">女性保健食品外盒</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">本款女性保健食品包裝以柔和粉色為主調，營造溫潤優雅的品牌氛圍，傳遞美麗與保養的細膩感受。設計結合流動光感與圓潤元素，象徵由內而外的滋養與循環。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-04-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 03</div><div class="pkg-name-zh">護眼保健食品外盒</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">以清新簡約的配色搭配俐落版面，展現自然與專業形象。透過清楚呈現產品成分與特色，提升品牌辨識度與消費者信賴感。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-05-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 04</div><div class="pkg-name-zh">行李箱外盒設計</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">採用正反雙面不同版面配置，於商場堆疊陳列時可同步展示系列兩款配色，兼具展示與運輸功能，創造更具效率的販售體驗。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-feature">
+        <div>
+          <div class="photo-box pkg-hero"><img src="assets/images/Packaging/packaging-06-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 05</div><div class="pkg-name-zh">聯名乾麵包裝設計</div></div><span class="tag">包裝設計</span></div>
+            <p class="pkg-desc">本系列以「台灣濃系列」為核心，結合在地農產職人與產地實景，傳遞濃厚本土情懷與食材溫度。以低飽和色調區分口味，搭配洗鍊縱向排版與金色標章，將傳統農產融入現代乾麵，打造兼具人文故事與精緻質感的聯名作品。</p>
+          </div>
+        </div>
+        <div class="pkg-side">
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-06-細節圖1.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-06-細節圖2.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-grid3">
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-07-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 06</div><div class="pkg-name-zh">行李箱外盒設計</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">以深色幾何立方紋樣為基調，打破傳統乾貨的樸實印象，營造現代感的低調奢華風格。正面以極簡標誌突顯品牌，背面透過模組化排版清晰呈現多元品項資訊。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-08-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 07</div><div class="pkg-name-zh">冰棒包裝設計</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">採用半透明材質結合白色區塊，搭配精緻的金色字體與手繪感插畫，營造清爽且具現代感的視覺層次；大面積透明窗口直接展現冰棒色澤，傳達天然與純粹質感。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-09-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 08</div><div class="pkg-name-zh">面膜包裝設計</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">以柔和霧感綠為主調，結合極簡排版與留白設計，呈現自然純淨與高端質感。葉片符號象徵溫和成分，整體視覺簡約而精緻，強化品牌專業形象。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-grid3">
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-10-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 09</div><div class="pkg-name-zh">eSIM 卡片設計</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">以深藍色科技紋理為基底，結合全球網路節點的視覺元素，傳遞穩定連線與現代科技的專業感；簡潔晶片標誌搭配溫馨旅途祝福，將通訊技術轉化為具溫度的旅行配件。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-11-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 10</div><div class="pkg-name-zh">寵物罐頭包裝設計</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">以溫潤的粉甜與粉藍色系區分口味，搭配可愛的毛孩剪影，營造親和且專業的品牌形象。透過清晰的條列式標記與營養資訊圖表，讓飼主能快速掌握食材重點。</p>
+          </div>
+        </div>
+        <div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-12-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 11</div><div class="pkg-name-zh">創意乾麵包裝設計</div></div><span class="tag">包裝</span></div>
+            <p class="pkg-desc-sm">將傳統「金紙」外觀轉化為現代創意設計，提倡中元祭祀「以麵代金」，兼具誠意與對土地的守護，將環保理念融入日常，打造深具文化話題性的節慶主打商品。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row">
+        <div class="pkg-duo">
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-13-主圖.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-13-主圖2.jpg" alt=""></div>
+        </div>
+        <div class="pkg-meta" style="display:grid;grid-template-columns:1fr 2fr;gap:1.2rem;align-items:start;">
+          <div><div class="pkg-name">PROJECT 12</div><div class="pkg-name-zh">乾麵禮盒設計</div><span class="tag">包裝設計</span></div>
+          <p class="pkg-desc">本系列禮盒結合名人代言與節慶意象，運用高對比的紅、黑、米白色調與燙金工藝，展現大器且精緻的品牌格調。透過流暢線條勾勒麵食意象，並搭配便利提繩設計，將在地乾麵轉化為兼具質感與傳統溫度的體面伴手禮。</p>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row pkg-feature">
+        <div>
+          <div class="photo-box pkg-hero"><img src="assets/images/Packaging/packaging-14-主圖.jpg" alt=""></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head"><div><div class="pkg-name">PROJECT 13</div><div class="pkg-name-zh">辣椒醬包裝設計 + 瓶標</div></div><span class="tag">包裝設計</span></div>
+            <p class="pkg-desc">以鮮明熱情的紅色系為主題，運用時尚的幾何圖騰與手繪感辣椒插畫，傳遞產品的辛辣層次與活力。瓶身標籤與外盒設計相互呼應，搭配洗鍊的金色「椒」字標誌，將傳統調味品轉化為兼具現代美學與高級感的精緻禮品。</p>
+          </div>
+        </div>
+        <div class="pkg-side">
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-14-細節圖1.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-14-細節圖2.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <div class="pkg-row">
+        <div class="pkg-duo">
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-15-主圖.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/Packaging/packaging-15-細節圖.jpg" alt=""></div>
+        </div>
+        <div class="pkg-meta" style="display:grid;grid-template-columns:1fr 2fr;gap:1.2rem;align-items:start;">
+          <div><div class="pkg-name">PROJECT 14</div><div class="pkg-name-zh">膠帶包裝設計</div><span class="tag">包裝設計</span></div>
+          <p class="pkg-desc">以高對比的黃黑配色搭配品牌北極熊識別，營造鮮明的視覺強度與專業五金美學。透過直觀的圖示功能說明與粗體字排版，將複雜的產品參數轉化為易讀的視覺資訊，精準傳達產品耐用與易操作的機能特性。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="slide-footer-text">Packaging Design</span>
+    <span class="slide-footer-logo">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- ─── PAGE 5: UI DESIGN ─── -->
+<div class="slide" id="pg6">
+  <div class="slide-body">
+    <div class="slide-label"><span>UI Design</span></div>
+    <div class="slide-content">
+      <div class="work-header">
+        <div>
+          <p class="eyebrow">Page 05 — Selected Work</p>
+          <h2 class="display" style="font-size:clamp(2.5rem,5vw,4rem);">UI<br>DESIGN</h2>
+          <p class="body-text" style="margin-top:0.6rem;">介面設計</p>
+        </div>
+        <div style="text-align:right;max-width:280px;">
+          <p class="body-text">Web 與 mobile 的介面視覺與互動原型，以 Figma 完成元件系統與點擊流程。</p>
+        </div>
+      </div>
+      <!-- Project 01 — featured (Packaging-01 style: meta under hero in left column) -->
+      <div class="pkg-row pkg-feature">
+        <div>
+          <div class="photo-box pkg-hero"><img src="assets/images/UI/UI-01/UI-01-區域1.jpg" alt="iOPEN Mall"></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head">
+              <div>
+                <div class="pkg-name">PROJECT 01</div>
+                <div class="pkg-name-zh">iOPEN Mall 電商平台 UI/UX Design</div>
+              </div>
+              <div class="ui-tags">
+                <span class="ui-tag">UI / UX</span>
+                <span class="ui-tag">電商平台</span>
+                <span class="ui-tag">Mobile + Web</span>
+              </div>
+            </div>
+            <p class="pkg-desc">本專案以「整合通路資源，打造電商生態系」為核心，將商品代理、超商取貨、物流配送與 OPENPOINT 會員優勢，轉化為完整的線上購物平台體驗。設計上同時規劃消費者前台與賣家後台，前台著重商品導購與順暢購物流，後台則整合訂單、商品、帳務與客服管理。視覺延續 iOPEN Mall 品牌色，透過紅、橘、深綠搭配白底與卡片式介面，建立清楚、親民且高效率的電商平台形象。</p>
+            <button class="ui-case-btn" onclick="openCaseModal()">
+              View Case Study
+              <span class="ui-case-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </button>
+            <span class="ui-case-hint">查看完整案例</span>
+          </div>
+        </div>
+        <div class="pkg-side">
+          <div class="photo-box"><img src="assets/images/UI/UI-01-細節圖01.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/UI/UI-01-細節圖02.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <!-- Project 02 — featured -->
+      <div class="pkg-row pkg-feature">
+        <div>
+          <div class="photo-box pkg-hero"><img src="assets/images/UI/UI-02-主圖.jpg" alt="愉運"></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head">
+              <div>
+                <div class="pkg-name">PROJECT 02</div>
+                <div class="pkg-name-zh">愉運 UI/UX Design</div>
+              </div>
+              <div class="ui-tags">
+                <span class="ui-tag">UI / UX</span>
+                <span class="ui-tag">長照健康</span>
+                <span class="ui-tag">Mobile + Web</span>
+              </div>
+            </div>
+            <p class="pkg-desc">本專案以「讓健康生活自然融入日常」為核心，打造專為銀髮族設計的課程預約平台，整合運動課程、飲食知識與社群活動，協助使用者輕鬆建立健康生活習慣。介面強調清楚易讀與直覺操作，降低銀髮族的使用負擔；視覺以低飽和藍綠、米白與珊瑚橘搭配圓角卡片，營造溫暖、安心且具陪伴感的品牌氛圍。</p>
+            <button class="ui-case-btn" onclick="openCaseModal02()">
+              View Case Study
+              <span class="ui-case-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </button>
+            <span class="ui-case-hint">查看完整案例</span>
+          </div>
+        </div>
+        <div class="pkg-side">
+          <div class="photo-box"><img src="assets/images/UI/UI-02-細節圖01.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/UI/UI-02-細節圖02.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <!-- Project 03 — featured -->
+      <div class="pkg-row pkg-feature">
+        <div>
+          <div class="photo-box pkg-hero"><img src="assets/images/UI/UI-03/UI-03-區域1.jpg" alt="心伴 Heartmate"></div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-head">
+              <div>
+                <div class="pkg-name">PROJECT 03</div>
+                <div class="pkg-name-zh">心伴 Heartmate UI/UX Design</div>
+              </div>
+              <div class="ui-tags">
+                <span class="ui-tag">UI / UX</span>
+                <span class="ui-tag">媒合服務</span>
+                <span class="ui-tag">Mobile + Web</span>
+              </div>
+            </div>
+            <p class="pkg-desc">心伴 Heartmate 以照服員與家屬為核心，整合長照需求、照服員媒合、預約安排與評價回饋，打造安心透明的照護服務流程。介面以低飽和藍色、圓角卡片與清楚資訊分層，傳遞專業、信任與溫暖感，降低長照媒合過程中的不安與溝通成本。</p>
+            <button class="ui-case-btn" onclick="openCaseModal03()">
+              View Case Study
+              <span class="ui-case-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </button>
+            <span class="ui-case-hint">查看完整案例</span>
+          </div>
+        </div>
+        <div class="pkg-side">
+          <div class="photo-box"><img src="assets/images/UI/UI-03-細節圖01.jpg" alt=""></div>
+          <div class="photo-box"><img src="assets/images/UI/UI-03-細節圖02.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="pkg-divider"></div>
+
+      <!-- Project 04 + 05 — 2-col web browser frames -->
+      <div class="pkg-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;">
+        <div>
+          <div class="web-frame">
+            <div class="web-bar">
+              <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+              <span class="web-url">project-04.terence.design</span>
+            </div>
+            <div class="web-viewport" style="height:520px;"><img src="assets/images/UI/UI-04-主圖.jpg" alt=""></div>
+          </div>
+          <div class="pkg-meta" style="margin-top:0.9rem;">
+            <div class="pkg-meta-head">
+              <div>
+                <div class="pkg-name">PROJECT 04</div>
+                <div class="pkg-name-zh">台灣精密光學展形象網站</div>
+              </div>
+              <span class="ui-tag">Web Design</span>
+            </div>
+            <p class="pkg-desc-sm">本專案以「展現精密光學產業的科技形象」為核心，整合展覽資訊、最新消息與產業新聞。視覺以深藍色、螢光藍光效與科技粒子圖像，營造專業、精密且具未來感的展會網站形象。</p>
+          </div>
+        </div>
+        <div>
+          <div class="web-frame">
+            <div class="web-bar">
+              <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+              <span class="web-url">project-05.terence.design</span>
+            </div>
+            <div class="web-viewport" style="height:520px;"><img src="assets/images/UI/UI-05-主圖.jpg" alt=""></div>
+          </div>
+          <div class="pkg-meta" style="margin-top:0.9rem;">
+            <div class="pkg-meta-head">
+              <div>
+                <div class="pkg-name">PROJECT 05</div>
+                <div class="pkg-name-zh">原企數位翻轉網站</div>
+              </div>
+              <span class="ui-tag">Web Design</span>
+            </div>
+            <p class="pkg-desc-sm">本專案以「協助原住民族企業數位轉型」為核心，打造元企數位翻轉網站，整合計畫資訊、申請流程、活動消息與成果分享，協助使用者快速了解計畫內容並完成申請。視覺以原民圖騰、山海意象與柔和色彩呈現文化特色，搭配清楚分區與圖像化導引，營造親切、易懂且具在地溫度的數位服務平台形象。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="slide-footer-text">UI Design</span>
+    <span class="slide-footer-logo">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- ─── PAGE 6: E-COMMERCE & SOCIAL ─── -->
+<div class="slide" id="pg7">
+  <div class="slide-body">
+    <div class="slide-label"><span>E-Commerce &amp; Social</span></div>
+    <div class="slide-content">
+      <div class="work-header">
+        <div>
+          <p class="eyebrow">Page 06 — Selected Work</p>
+          <h2 class="display" style="font-size:clamp(2rem,4vw,3.2rem);">E-COMMERCE<br>&amp; SOCIAL</h2>
+          <p class="body-text" style="margin-top:0.6rem;">電商 / 社群</p>
+        </div>
+        <div style="text-align:right;max-width:300px;">
+          <p class="body-text">針對品牌電商與社群媒體規劃整體視覺，從節慶 Banner、產品詳細頁，到社群貼文與限時動態，兼顧品牌調性、轉換成效與內容節奏。</p>
+        </div>
+      </div>
+
+      <div class="ec-section">
+        <div class="ec-section-head">
+          <span class="ec-section-num">01</span>
+          <h3 class="ec-section-title">VISUAL BANNER</h3>
+          <span class="ec-section-zh">視覺 Banner</span>
+        </div>
+        <div class="ec-stage">
+          <div class="banner-deck">
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/主BN_工作區域 1.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/BN3.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/BN.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/干貝粽.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/1778139826275.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/0302_工作區域 1.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/1200X627.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/1200X627-3.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/視覺Banner/bn_工作區域 1 複本.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ec-section">
+        <div class="ec-section-head">
+          <span class="ec-section-num">02</span>
+          <h3 class="ec-section-title">E-COMMERCE BANNER</h3>
+          <span class="ec-section-zh">電商主視覺</span>
+        </div>
+        <div class="ec-stage">
+          <div class="banner-deck">
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/中秋節Banner.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/周年慶Banner.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/雙12Banner.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/新年Banner.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/女王節.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/母親節Banner.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/兒童節Banner.png" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/LIKOO4月鋪底_2件八折_2000x1000.jpg" alt=""></div>
+            <div class="b-card"><img src="assets/images/E-Commerce/電商BANNER/鋪底_滿額扣2000X1000.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ec-section">
+        <div class="ec-section-head">
+          <span class="ec-section-num">03</span>
+          <h3 class="ec-section-title">SOCIAL POSTS</h3>
+          <span class="ec-section-zh">社群貼文</span>
+        </div>
+        <div class="ec-stage">
+          <div class="ig-grid">
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/沐美-ONDA.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/沐美-水光針.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/沐美-埋線拉提.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/沐美-隆乳.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/骨相美.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/臉部輪廓貼文_1.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/康是美_文案1.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/康是美_文案4.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/0107產品詳細_2.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/0107產品詳細_4.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/0605-07.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/0605_工作區域 1.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/0824貼文_2.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/0824貼文_15.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/0915BN-01.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/LiKOO廣告.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/地球日.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/滿額贈1080X1080.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/貼文_工作區域 1 複本.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+            <div class="ig-card"><div class="ig-header"><span class="ig-logo">Instagram</span><span class="ig-icons"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span></div><div class="ig-image"><img src="assets/images/E-Commerce/社群貼文廣告/貼文/貼文_工作區域 1 複本 2.jpg" alt=""></div><div class="ig-footer"><span class="ig-actions"><svg class="ig-icon-fill" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg><svg class="ig-icon-stroke" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="ig-bookmark"><svg class="ig-icon-stroke" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ec-section">
+        <div class="ec-section-head">
+          <span class="ec-section-num">04</span>
+          <h3 class="ec-section-title">SOCIAL STORIES</h3>
+          <span class="ec-section-zh">限時動態</span>
+        </div>
+        <div class="ec-stage">
+          <div class="story-grid-mock">
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/逆時針.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/貼文動態_1920X1080.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/25-08-08-超微波.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/25-02-21-限時動態_3月-2.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/0608_IG.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/0412精油系列.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/0329吊卡限動.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/IG_現動.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/B.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/1223_工作區域 1.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/工作區域 1 複本 2.jpg" alt=""></div>
+            <div class="story-card"><img src="assets/images/E-Commerce/社群貼文廣告/限時動態/ChatGPT Image 2026年5月7日 下午03_38_46.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ec-section">
+        <div class="ec-section-head">
+          <span class="ec-section-num">05</span>
+          <h3 class="ec-section-title">PRODUCT DETAIL</h3>
+          <span class="ec-section-zh">產品詳細頁</span>
+        </div>
+        <div class="pd-grid">
+          <div class="pd-phone" onclick="openModal('assets/images/E-Commerce/產品頁介紹/0605.jpg')"><div class="pd-phone-screen"><img src="assets/images/E-Commerce/產品頁介紹/0605.jpg" alt=""></div></div>
+          <div class="pd-phone" onclick="openModal('assets/images/E-Commerce/產品頁介紹/0925-08.jpg')"><div class="pd-phone-screen"><img src="assets/images/E-Commerce/產品頁介紹/0925-08.jpg" alt=""></div></div>
+          <div class="pd-phone" onclick="openModal('assets/images/E-Commerce/產品頁介紹/中秋詳細業-01.jpg')"><div class="pd-phone-screen"><img src="assets/images/E-Commerce/產品頁介紹/中秋詳細業-01.jpg" alt=""></div></div>
+          <div class="pd-phone" onclick="openModal('assets/images/E-Commerce/產品頁介紹/蘋果酵素商品圖_工作區域 1.jpg')"><div class="pd-phone-screen"><img src="assets/images/E-Commerce/產品頁介紹/蘋果酵素商品圖_工作區域 1.jpg" alt=""></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="slide-footer-text">E-Commerce &amp; Social</span>
+    <span class="slide-footer-logo">PORTFOLIO</span>
+  </div>
+</div>
+
+
+</div>
+</div>
+
+<div class="nav-arrows">
+  <button onclick="prev()" id="btn-prev" title="Previous"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+  <div class="progress-dots" id="dots"></div>
+  <button onclick="next()" id="btn-next" title="Next"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+</div>
+
+<!-- Case Study Modal · UI-03 -->
+<div class="case-modal" id="case-modal-03" onclick="closeCaseModal03()">
+  <div class="case-modal-box" onclick="event.stopPropagation()">
+    <button class="case-modal-close" onclick="closeCaseModal03()" aria-label="Close">&times;</button>
+
+    <!-- Section 1: Hero -->
+    <section class="case-hero">
+      <div class="case-hero-img"><img src="assets/images/UI/UI-03/UI-03-區域1.jpg" alt=""></div>
+      <div class="case-hero-meta">
+        <p class="case-hero-desc">心伴 Heartmate 以照服員與被照顧者家屬為核心使用者，整合長照需求填寫、照服員媒合、預約安排與服務評價，建立完整的長照服務閉環。設計上以低飽和藍色傳遞專業與信任感，搭配柔和背景、圓角卡片與清楚的資訊分層，降低長照服務選擇時的不安感。透過直覺化流程與明確的操作導引，協助家屬快速找到合適照服員，也讓照服員能有效管理個人資料與服務內容，打造更安心、透明且友善的照護媒合體驗。</p>
+        <div class="case-hero-tags">
+          <span class="ui-tag">UI / UX</span>
+          <span class="ui-tag">媒合服務</span>
+          <span class="ui-tag">Mobile + Web</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: User Flow -->
+    <section class="case-sec no-pad-img">
+      <div class="case-sec-head">
+        <div class="case-sec-titles">
+          <span class="case-sec-eyebrow">02 — Information Architecture</span>
+          <h3 class="case-sec-title">USER FLOW</h3>
+          <p class="case-sec-zh">使 用 者 操 作 流 程</p>
+        </div>
+        <p class="case-sec-intro">以照服員與被照顧者家屬兩大主路徑出發，整合媒合需求、預約安排與服務評價回饋，建立完整的長照服務閉環。</p>
+      </div>
+      <div class="case-sec-img-wrap">
+        <img src="assets/images/UI/UI-03/User Flow.jpg" alt="User Flow" style="width:100%;display:block;">
+      </div>
+    </section>
+
+    <!-- Section 3: Design Guidelines -->
+    <section class="case-sec no-pad-img">
+      <div class="case-sec-head">
+        <div class="case-sec-titles">
+          <span class="case-sec-eyebrow">03 — Design System</span>
+          <h3 class="case-sec-title">DESIGN GUIDELINES</h3>
+          <p class="case-sec-zh">設 計 規 範</p>
+        </div>
+        <p class="case-sec-intro">以信任、安心為主視覺方向，建立柔和色彩、清楚字級與一致的元件規範，提升長照服務媒合的可讀性與專業度。</p>
+      </div>
+      <div class="case-sec-img-wrap">
+        <div class="case-sec-img-card"><img src="assets/images/UI/UI-03/照服媒合平台Design Guidelines.png" alt="Design Guidelines"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Key Screens -->
+    <div class="case-screens">
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—01</span>
+              <span class="pair-name-zh">首頁</span>
+            </div>
+            <span class="pair-name-en">HOME</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-03.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-03/照服媒合平台首頁-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-03/照服媒合平台首頁-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—02</span>
+              <span class="pair-name-zh">內頁 01</span>
+            </div>
+            <span class="pair-name-en">INNER PAGE 01</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-03.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-03/照服媒合平台內頁1-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-03/照服媒合平台內頁1-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—03</span>
+              <span class="pair-name-zh">內頁 02</span>
+            </div>
+            <span class="pair-name-en">INNER PAGE 02</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-03.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-03/照服媒合平台內頁2-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-03/照服媒合平台內頁2-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—04</span>
+              <span class="pair-name-zh">內頁 03</span>
+            </div>
+            <span class="pair-name-en">INNER PAGE 03</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-03.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-03/照服媒合平台內頁3-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-03/照服媒合平台內頁3-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Section 6: Figma CTA -->
+    <section class="case-cta">
+      <p class="case-cta-eyebrow">PROTOTYPE · SOURCE FILE</p>
+      <h3 class="case-cta-title">VIEW IN FIGMA</h3>
+      <p class="case-cta-sub">前往 Figma 查看完整原型與規範</p>
+      <a class="case-figma-btn" href="https://www.figma.com/design/LYWR174PpcmHGOA3Qj9nOY/E-3-%E7%85%A7%E6%9C%8D%E5%AA%92%E5%90%88%E5%B9%B3%E5%8F%B0---%E9%A0%90%E7%B4%84%E6%9C%8D%E5%8B%99--?node-id=0-1&m=dev&t=1mC03WkFlCi6jUOh-1" target="_blank" rel="noopener">
+        <svg class="figma-logo" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#1ABCFE" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/>
+          <path fill="#0ACF83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/>
+          <path fill="#FF7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/>
+          <path fill="#F24E1E" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/>
+          <path fill="#A259FF" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/>
+        </svg>
+        <span>Open in Figma</span>
+        <span class="case-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+    </section>
+  </div>
+</div>
+
+<!-- Case Study Modal · UI-02 -->
+<div class="case-modal" id="case-modal-02" onclick="closeCaseModal02()">
+  <div class="case-modal-box" onclick="event.stopPropagation()">
+    <button class="case-modal-close" onclick="closeCaseModal02()" aria-label="Close">&times;</button>
+
+    <!-- Section 1: Hero -->
+    <section class="case-hero">
+      <div class="case-hero-img"><img src="assets/images/UI/UI-02/UI-02-區域1.jpg" alt=""></div>
+      <div class="case-hero-meta">
+        <p class="case-hero-desc">本專案以「讓健康生活自然融入日常」為核心，打造一個專為銀髮族設計的課程預約平台。平台整合運動課程、飲食知識、生活規劃與社群活動，協助使用者在熟悉、安心的介面中探索適合自己的健康生活方式。設計上以清楚易讀、操作直覺為主要方向，透過課程分類、知識分享、活動照片、會員功能與購物車流程，讓銀髮族能快速瀏覽課程、理解內容並完成預約。整體流程降低操作負擔，同時保留陪伴感與社群互動性。視覺以低飽和藍綠、米白與珊瑚橘作為主色，搭配柔和插畫、圓角卡片與大面積留白，營造溫暖、親切且安心的品牌氛圍。整體設計希望傳遞「健康不只是課程，而是一種可以持續實踐的生活陪伴」。</p>
+        <div class="case-hero-tags">
+          <span class="ui-tag">UI / UX</span>
+          <span class="ui-tag">長照健康</span>
+          <span class="ui-tag">Mobile + Web</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: User Flow -->
+    <section class="case-sec no-pad-img">
+      <div class="case-sec-head">
+        <div class="case-sec-titles">
+          <span class="case-sec-eyebrow">02 — Information Architecture</span>
+          <h3 class="case-sec-title">USER FLOW</h3>
+          <p class="case-sec-zh">使 用 者 操 作 流 程</p>
+        </div>
+        <p class="case-sec-intro">由首頁起始，分為長者瀏覽課程與家屬／教練管理兩大流向，涵蓋課程列表、預約系統、會員專區與健康紀錄等核心模組。</p>
+      </div>
+      <div class="case-sec-img-wrap">
+        <img src="assets/images/UI/UI-02/USER FLOW.jpg" alt="User Flow" style="width:100%;display:block;">
+      </div>
+    </section>
+
+    <!-- Section 3: Design Guidelines -->
+    <section class="case-sec no-pad-img">
+      <div class="case-sec-head">
+        <div class="case-sec-titles">
+          <span class="case-sec-eyebrow">03 — Design System</span>
+          <h3 class="case-sec-title">DESIGN GUIDELINES</h3>
+          <p class="case-sec-zh">設 計 規 範</p>
+        </div>
+        <p class="case-sec-intro">以柔和、可閱讀為核心建立色彩與字級規範，放大關鍵元件尺寸與對比，讓長者也能輕鬆操作。</p>
+      </div>
+      <div class="case-sec-img-wrap">
+        <div class="case-sec-img-card"><img src="assets/images/UI/UI-02/銀髮族健康課程Design Guidelines.png" alt="Design Guidelines"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Key Screens -->
+    <div class="case-screens">
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—01</span>
+              <span class="pair-name-zh">首頁</span>
+            </div>
+            <span class="pair-name-en">HOME</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-02.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程首頁-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程首頁-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—02</span>
+              <span class="pair-name-zh">內頁 01</span>
+            </div>
+            <span class="pair-name-en">INNER PAGE 01</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-02.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁1-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁1-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—03</span>
+              <span class="pair-name-zh">內頁 02</span>
+            </div>
+            <span class="pair-name-en">INNER PAGE 02</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-02.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁2-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁2-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—04</span>
+              <span class="pair-name-zh">內頁 03</span>
+            </div>
+            <span class="pair-name-en">INNER PAGE 03</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-02.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁3-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁3-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—05</span>
+              <span class="pair-name-zh">內頁 04</span>
+            </div>
+            <span class="pair-name-en">INNER PAGE 04</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-02.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁4-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁4-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">P—06</span>
+              <span class="pair-name-zh">內頁 05</span>
+            </div>
+            <span class="pair-name-en">INNER PAGE 05</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">ui-02.terence.design</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁5-web.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-02/銀髮族健康課程內頁5-mob.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Section 6: Figma CTA -->
+    <section class="case-cta">
+      <p class="case-cta-eyebrow">PROTOTYPE · SOURCE FILE</p>
+      <h3 class="case-cta-title">VIEW IN FIGMA</h3>
+      <p class="case-cta-sub">前往 Figma 查看完整原型與規範</p>
+      <a class="case-figma-btn" href="https://www.figma.com/design/kTWmkvv2NaDXQvfofZ29kQ/Untitled?node-id=2006-1814&m=dev&t=jWV7bx1TMhJF3RXV-1" target="_blank" rel="noopener">
+        <svg class="figma-logo" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#1ABCFE" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/>
+          <path fill="#0ACF83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/>
+          <path fill="#FF7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/>
+          <path fill="#F24E1E" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/>
+          <path fill="#A259FF" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/>
+        </svg>
+        <span>Open in Figma</span>
+        <span class="case-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+    </section>
+  </div>
+</div>
+
+<!-- Case Study Modal -->
+<div class="case-modal" id="case-modal" onclick="closeCaseModal()">
+  <div class="case-modal-box" onclick="event.stopPropagation()">
+    <button class="case-modal-close" onclick="closeCaseModal()" aria-label="Close">&times;</button>
+
+    <!-- Section 1: Hero -->
+    <section class="case-hero">
+      <div class="case-hero-img"><img src="assets/images/UI/UI-01/UI-01-區域1.jpg" alt=""></div>
+      <div class="case-hero-meta">
+        <p class="case-hero-desc">本專案以「整合通路資源，打造電商生態系」為核心，將統一集團既有的商品代理、7-ELEVEN 超商取貨、物流配送與 OPENPOINT 會員優勢，轉化為完整的線上購物平台體驗。設計上同時規劃消費者前台與賣家後台，前台著重商品導購、促銷活動與順暢購物流；後台則以訂單、商品、帳務、客服與數據管理為主，協助賣家快速掌握營運狀況。視覺延續 iOPEN Mall 品牌色，以紅、橘、深綠搭配白底與淺灰卡片，建立親民、清楚且具效率的電商平台形象。整體設計希望讓消費者、賣家與超商通路之間形成更順暢的數位服務流程。</p>
+        <div class="case-hero-tags">
+          <span class="ui-tag">UI / UX</span>
+          <span class="ui-tag">電商平台</span>
+          <span class="ui-tag">Mobile + Web</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: User Flow -->
+    <section class="case-sec no-pad-img">
+      <div class="case-sec-head">
+        <div class="case-sec-titles">
+          <span class="case-sec-eyebrow">02 — Information Architecture</span>
+          <h3 class="case-sec-title">USER FLOW</h3>
+          <p class="case-sec-zh">使 用 者 操 作 流 程</p>
+        </div>
+        <p class="case-sec-intro">由首頁起始，分為買家瀏覽購物路徑與賣家管理路徑兩大流向，涵蓋商城、購物車、會員系統、賣家專區等核心模組。</p>
+      </div>
+      <div class="case-sec-img-wrap">
+        <div class="case-sec-img-card"><img src="assets/images/UI/UI-01/User Flow.jpg" alt="User Flow"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Design Guidelines -->
+    <section class="case-sec no-pad-img">
+      <div class="case-sec-head">
+        <div class="case-sec-titles">
+          <span class="case-sec-eyebrow">03 — Design System</span>
+          <h3 class="case-sec-title">DESIGN GUIDELINES</h3>
+          <p class="case-sec-zh">設 計 規 範</p>
+        </div>
+        <p class="case-sec-intro">沿用品牌主色（紅／橘／綠）建立 5% – 100% 漸層階梯，並以 PingFang TC + SF Pro 為主體字體，建立完整字級層級。</p>
+      </div>
+      <div class="case-sec-img-wrap">
+        <div class="case-sec-img-card"><img src="assets/images/UI/UI-01/Design Guidelines.jpg" alt="Design Guidelines"></div>
+      </div>
+    </section>
+
+    <!-- Section 4: Front/Back Toggle -->
+    <div class="case-toggle">
+      <div class="case-toggle-group" role="tablist">
+        <button class="case-toggle-btn active" data-mode="front" onclick="caseToggle('front')">前　台</button>
+        <button class="case-toggle-btn" data-mode="back" onclick="caseToggle('back')">後　台</button>
+      </div>
+    </div>
+
+    <!-- Section 5: Key Screens (Front) -->
+    <div class="case-screens" id="case-screens-front">
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">F—01</span>
+              <span class="pair-name-zh">首頁</span>
+            </div>
+            <span class="pair-name-en">HOME</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/前台/Web/首頁.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/前台/Mob/首頁.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">F—02</span>
+              <span class="pair-name-zh">商品分類頁</span>
+            </div>
+            <span class="pair-name-en">CATEGORY PAGE</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/前台/Web/商品分類頁.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/前台/Mob/商品分類頁.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">F—03</span>
+              <span class="pair-name-zh">商品詳細頁</span>
+            </div>
+            <span class="pair-name-en">PRODUCT DETAIL</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/前台/Web/商品詳細頁.png" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/前台/Mob/商品詳細頁.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">F—04</span>
+              <span class="pair-name-zh">會員中心首頁</span>
+            </div>
+            <span class="pair-name-en">MEMBER HOME</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/前台/Web/會員中心首頁.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/前台/Mob/會員中心首頁.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">F—05</span>
+              <span class="pair-name-zh">店家版型</span>
+            </div>
+            <span class="pair-name-en">STORE TEMPLATE</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/前台/Web/店家版型.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/前台/Mob/店家版型.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Section 5: Key Screens (Back) -->
+    <div class="case-screens" id="case-screens-back" hidden>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">B—01</span>
+              <span class="pair-name-zh">賣家中心首頁</span>
+            </div>
+            <span class="pair-name-en">SELLER DASHBOARD</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/後台/Web/賣家中心首頁.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/後台/Mob/賣家中心首頁.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">B—02</span>
+              <span class="pair-name-zh">訂單列表</span>
+            </div>
+            <span class="pair-name-en">ORDER LIST</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/後台/Web/訂單列表.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/後台/Mob/訂單列表.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">B—03</span>
+              <span class="pair-name-zh">訂單明細</span>
+            </div>
+            <span class="pair-name-en">ORDER DETAIL</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/後台/Web/訂單明細.png" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/後台/Mob/訂單明細.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">B—04</span>
+              <span class="pair-name-zh">商店佈置</span>
+            </div>
+            <span class="pair-name-en">SHOP DECORATION</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/後台/Web/商店佈置.jpg" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/後台/Mob/商店佈置.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="pair-row">
+          <div class="pair-head">
+            <div class="pair-head-left">
+              <span class="pair-num">B—05</span>
+              <span class="pair-name-zh">新增商品</span>
+            </div>
+            <span class="pair-name-en">ADD PRODUCT</span>
+          </div>
+          <div class="pair-bodies">
+            <div class="web-frame">
+              <div class="web-bar">
+                <span class="web-dot red"></span><span class="web-dot yellow"></span><span class="web-dot green"></span>
+                <span class="web-url">www.iopen-mall.com</span>
+              </div>
+              <div class="web-viewport"><img src="assets/images/UI/UI-01/後台/Web/新增商品.png" alt=""></div>
+            </div>
+            <div class="case-phone-frame">
+              <div class="case-phone-viewport"><img src="assets/images/UI/UI-01/後台/Mob/新增商品.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Section 6: Figma CTA -->
+    <section class="case-cta">
+      <p class="case-cta-eyebrow">PROTOTYPE · SOURCE FILE</p>
+      <h3 class="case-cta-title">VIEW IN FIGMA</h3>
+      <p class="case-cta-sub">前往 Figma 查看完整原型與規範</p>
+      <a class="case-figma-btn" href="https://www.figma.com/design/J91x3oefzGo5JwvTMImqC6/Untitled?node-id=24-4171&m=dev&t=qHoLQBHNDzZpEgTE-1" target="_blank" rel="noopener">
+        <svg class="figma-logo" viewBox="0 0 38 57" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#1ABCFE" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/>
+          <path fill="#0ACF83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/>
+          <path fill="#FF7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/>
+          <path fill="#F24E1E" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/>
+          <path fill="#A259FF" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/>
+        </svg>
+        <span>Open in Figma</span>
+        <span class="case-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+    </section>
+  </div>
+</div>
+
+<div class="img-modal" id="img-modal" onclick="closeModal()">
+  <button class="img-modal-close" onclick="event.stopPropagation();closeModal()">&times;</button>
+  <img src="" alt="">
+</div>
+
+<script>
+const TOTAL = 6;
+let cur = 0;
+const slidesEl = document.getElementById('slides');
+const navBtns = document.querySelectorAll('#top-nav button');
+const curNum = document.getElementById('cur-num');
+const dotsEl = document.getElementById('dots');
+for(let i=0;i<TOTAL;i++){
+  const d = document.createElement('div');
+  d.className='dot'+(i===0?' active':'');
+  d.onclick=()=>goTo(i);
+  dotsEl.appendChild(d);
+}
+function goTo(n){
+  if(n<0||n>=TOTAL)return;
+  cur=n;
+  slidesEl.style.transform='translateX(-'+(cur*100)+'%)';
+  navBtns.forEach((b,i)=>b.classList.toggle('active',i===cur));
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  curNum.textContent=String(cur+1).padStart(2,'0');
+  document.getElementById('btn-prev').style.opacity=cur===0?'0.3':'1';
+  document.getElementById('btn-next').style.opacity=cur===TOTAL-1?'0.3':'1';
+  /* Close mobile menu when navigating */
+  if(document.body.classList.contains('nav-open')){document.body.classList.remove('nav-open');}
+}
+function toggleNav(){document.body.classList.toggle('nav-open');}
+function next(){goTo(cur+1);}
+function prev(){goTo(cur-1);}
+function openModal(src){
+  const m=document.getElementById('img-modal');
+  m.querySelector('img').src=src;
+  m.classList.add('show');
+}
+function closeModal(){
+  document.getElementById('img-modal').classList.remove('show');
+}
+let savedScrollY=0;
+function lockBg(){
+  savedScrollY=window.scrollY||window.pageYOffset||0;
+  document.documentElement.classList.add('modal-open');
+  document.body.classList.add('modal-open');
+  document.body.style.top='-'+savedScrollY+'px';
+}
+function unlockBg(){
+  if(!document.querySelector('.case-modal.show')){
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+    document.body.style.top='';
+    window.scrollTo(0,savedScrollY);
+  }
+}
+function openCaseModal(){document.getElementById('case-modal').classList.add('show');lockBg();}
+function closeCaseModal(){document.getElementById('case-modal').classList.remove('show');unlockBg();}
+function openCaseModal02(){document.getElementById('case-modal-02').classList.add('show');lockBg();}
+function closeCaseModal02(){document.getElementById('case-modal-02').classList.remove('show');unlockBg();}
+function openCaseModal03(){document.getElementById('case-modal-03').classList.add('show');lockBg();}
+function closeCaseModal03(){document.getElementById('case-modal-03').classList.remove('show');unlockBg();}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeModal();closeCaseModal();closeCaseModal02();closeCaseModal03();return;}
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')next();
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')prev();
+});
+let startX=0;
+slidesEl.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
+slidesEl.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-startX;
+  if(Math.abs(dx)>40){dx<0?next():prev();}
+},{passive:true});
+function caseToggle(mode){
+  const btns=document.querySelectorAll('.case-toggle-btn');
+  btns.forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));
+  document.getElementById('case-screens-front').hidden = mode!=='front';
+  document.getElementById('case-screens-back').hidden  = mode!=='back';
+  const target=document.getElementById('case-screens-'+mode);
+  if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+goTo(0);
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
